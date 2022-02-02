@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <title>Пивогенератор V 1.0</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <section class="">
+            <h1 class="visually-hidden">Мы Банда и мы ценители уникального ПИВА!</h1>
+        </section>
+    </header>
+    <main class="main">
+        <div class="wrapper">
+            <section class="section">
+                <h2 class="section__title visually-hidden">Ваш профиль</h2>
+                <div class="section__info user">
+                    <div class="user__wrapper">
+                        <div class="user__avatar-wrapper"></div>
+                        <div class="user__name-wrapper">
+                            <p class="section__text user-info__text ">Имя:
+                                <span class="user-info__title user-first-name">Parker</span>
+                            </p>
+                            <p class="section__text user-info__text">Фамилия:
+                                <span class="user-info__title user-last-name">Cartwright</span>
+                            </p>
+                            <p class="section__text user-info__text">
+                                <span class=" user-email">parker.cartwright@email.com</span>
+                            </p>
+                            <p class="section__text user-birth-date">1980-08-18</p>
+                        </div>
+                    </div>
+                    <button class="basic-button user__button user__button--show-hide">Показать/скрыть все
+                        сведения</button>
+                    <div class="user-info ">
+                        <h3 class="section__subtitle">Сведения о пользователе</h3>
+                        <ul class="user__list">
+                            <li class="user__item">
+                                <p class="section__text user-info__text">ID:
+                                    <span class="user-id">76</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">UID:
+                                    <span class="user-uid">fb9451a4-95aa-40b5-8278-12b119cc8f6b</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Пароль:
+                                    <span class="user-password">Yc6FCpPTE2</span>
+                                </p>
+                            </li>
+                            <li class="user__item disabled ">
+                                <p class="section__text user-info__text visually-hidden">Имя:
+                                    <span class="user-info__title user-first-name">Parker</span>
+                                </p>
+                            </li>
+                            <li class="user__item disabled ">
+                                <p class="section__text user-info__text visually-hidden">Фамилия:
+                                    <span class="user-info__title user-last-name">Cartwright</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">User name:
+                                    <span class="user-name">parker.cartwright</span>
+                                </p>
+                            </li>
+                            <li class="user__item disabled ">
+                                <p class="section__text user-info__text">eMail:
+                                    <span class="user-email">parker.cartwright@email.com</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Gender:
+                                    <span class="user-gender">Non-binary</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Phone:
+                                    <span class="user-phone-number">+232 354-665-4013</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Social card:
+                                    <span class="user-social-card">449471903</span>
+                                </p>
+                            </li>
+                            <li class="user__item disabled ">
+                                <p class="section__text user-info__text">Birth dated:
+                                    <span class="user-birth-date">1980-08-18</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Employment title:
+                                    <span class="user-employment-title">Internal Liaison</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Employment key skill:
+                                    <span class="user-employment-key-skill">Leadership</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="section__subtitle">Адрес:</h3>
+                        <ul class="user__list address">
+                            <li class="user__item">
+                                <p class="section__text user-info__text">City:
+                                    <span class="address-city">Lake Cedrickvill</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Street:
+                                    <span class="address-street-name">Wilfredo Square</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Street address:
+                                    <span class="address-street-address">96840 Erdman Brook</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Zip code:
+                                    <span class="address-zip-code">39851-1610</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">State:
+                                    <span class="address-state">Iowa</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Country:
+                                    <span class="address-country">United States</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Coordinates .lat:
+                                    <span class="address-coordinates-lat">51.15356230667055</span>
+                                </p>
+                            </li>
+                            <li class="user__item">
+                                <p class="section__text user-info__text">Coordinates .lng:
+                                    <span class="address-coordinates-lng">-53.79519763212616</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="section__subtitle">Сведения об оплате</h3>
+                        <ul class="user__list payment-info payment-info">
+                            <li class="user__item payment-info__item">
+                                <p class="section__text ">Номер карты:
+                                    <span class="payment-info__ credit-card-numder">4337-7750-0381-9086</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="section__subtitle">Сведения о подписке</h3>
+                        <ul class="user__list subscription">
+                            <li class="user__item subscription__item">
+                                <p class="section__text subscription__text">План подписки:
+                                    <span class="subscription-plan">Premium</span>
+                                </p>
+                            </li>
+                            <li class="subscription__item">
+                                <p class="section__text subscription__text">Статус:
+                                    <span class="subscription-status">Active</span>
+                                </p>
+                            </li>
+                            <li class="subscription__item">
+                                <p class="section__text subscription__text">Метод оплаты:
+                                    <span class="subscription-payment-method">WeChat Pay</span>
+                                </p>
+                            </li>
+                            <li class="subscription__item">
+                                <p class="section__text subscription__text">Тип подписки:
+                                    <span class="subscription-term">Full subscription</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user__map-wrapper map">
+                        <div class="map__canvas" id="map-canvas">
+                        </div>
+                    </div>
+                </div>
+                <div class="control user-control">
+                    <h3 class="section__subtitle visually-hidden">Опции пользователя</h3>
+                    <button class="basic-button user-control__button user-control__button--change-user">Выйти и Сменить
+                        пользователя</button>
+                </div>
+            </section>
+            <section class="section beer-section ">
+                <h2 class="section__title your-beer-title">Пивогенератор v 1.0:</h2>
+                <div class="section__beer-info beer-info">
+                    <ul class="section__list beer-info__list">
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text visually-hidden">ID:
+                                <span class="beer-id">933</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text visually-hidden">UID:
+                                <span class="beer-uid">610def3c-3a4d-46d5-a2e5-9ed7456c091e</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Бренд:
+                                <span class="beer-brand">Coors lite</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Низвание:
+                                <span class="beer-info__title beer-name">Trappistes Rochefort 8</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Вид (style):
+                                <span class="beer-info__title beer-style">Scottish And Irish Ale</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Хмель (hop):
+                                <span class="beer-hop">Newport</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Дрожжи (yeast):
+                                <span class="beer-yeast">2112 - California Lager</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Солод (malts):
+                                <span class="beer-malts">Carapils</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Горечь (ibu):
+                                <span class="beer-ibu">63 IBU</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Алк. об. (alcohol):
+                                <span class="beer-info__title beer-alcohol">2.4%</span>
+                            </p>
+                        </li>
+                        <li class="section__item beer-info__item">
+                            <p class="beer-info__text">Экстракт (blg):
+                                <span class="beer-blg">5.3°Blg</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="section__control beer-options">
+                        <button class="basic-button beer-options__button beer-options__button--next">Следующее!</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="section control change-beer">
+            <h3 class="section__subtitle">Как будем выбирать?</h3>
+            <button class="basic-button change-beer__button change-beer__button--fast">Просто заткнись, возьми деньги и
+                дай
+                мне
+                пиво!</button>
+            <button class="basic-button change-beer__button change-beer__button--best">Пиво дня</button>
+            <button class="basic-button change-beer__button change-beer__button--surprise">Удиви меня!</button>
+        </section>
+    </main>
+    <footer class="footer">
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script type="module" src="js/script.min.js"></script>
+</body>
+
+</html>
