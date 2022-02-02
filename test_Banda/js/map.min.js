@@ -15,7 +15,7 @@ const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 const MAIN_ICON = {
-    iconUrl: '../img/icons/beer-icon.svg',
+    iconUrl: './img/icons/beer-icon.svg',
     iconSize: [58, 76],
     iconAnchor: [29, 76],
 };
