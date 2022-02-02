@@ -57,11 +57,15 @@ import { getUserMapData } from '../js/map.min.js';
 
 const userCard = document.querySelector('.user');
 const beerCard = document.querySelector('.beer-info');
-const changeUser = document.querySelector('.change-user');
-const changeBeerFast = document.querySelector('.change-beer--fast');
-const changeBeerBest = document.querySelector('.change-beer--best');
-const changeBeerNext = document.querySelector('.change-beer--next');
-const changeBeerSurprise = document.querySelector('.change-beer--surprise');
+
+const userInfo = document.querySelector('.user-info');
+const userInfoButton = document.querySelector('.user__button--show-hide');
+
+const changeUser = document.querySelector('.user__button--change-user');
+const changeBeerFast = document.querySelector('.change-beer__button--fast');
+const changeBeerBest = document.querySelector('.change-beer__button--best');
+const changeBeerSurprise = document.querySelector('.change-beer__button--surprise');
+const changeBeerNext = document.querySelector('.beer-options__button--next');
 
 
 const getUserInfoData = (dataArray) => {
@@ -69,7 +73,6 @@ const getUserInfoData = (dataArray) => {
     let addr = new URL(dataArray.avatar);
     let origin = addr.origin;
     let path = addr.pathname;
-
     userCard.querySelector('.user__avatar-wrapper').style.backgroundImage = (" url('" + origin + path + "'");
     userCard.querySelector('.user-id').textContent = dataArray.id;
     userCard.querySelector('.user-uid').textContent = dataArray.uid;
@@ -97,7 +100,6 @@ const getUserInfoData = (dataArray) => {
     userCard.querySelector('.subscription-status').textContent = dataArray.subscription.status;
     userCard.querySelector('.subscription-payment-method').textContent = dataArray.subscription.payment_method;
     userCard.querySelector('.subscription-term').textContent = dataArray.subscription.term;
-
 };
 
 
@@ -126,9 +128,23 @@ const getBeerCardData = (dataArray) => {
 let loadUserData = getUserData(getUserCardData, console.error);
 let loadBeerData = getBeerData(getBeerCardData, console.error);
 
+const operAndHideUserInfo = () => {
+
+    userInfo.classList.toggle('user-info--open');
+};
+
+
+
+
+userInfoButton.addEventListener('click', () => {
+    operAndHideUserInfo();
+});
+
+
 changeUser.addEventListener('click', () => {
     loadUserData();
 });
+
 
 
 changeBeerFast.addEventListener('click', () => {
@@ -142,9 +158,9 @@ changeBeerBest.addEventListener('click', () => {
 });
 
 changeBeerNext.addEventListener('click', () => {
-    alert("Момент - мы быстро подглядим в соседнем баре!");
-    setTimeout(loadBeerData, 3000);
+    loadBeerData();
 });
+
 
 changeBeerSurprise.addEventListener('click', () => {
     alert("Мы делаем все возможное - ждите!");
