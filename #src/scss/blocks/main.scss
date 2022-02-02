@@ -42,7 +42,7 @@
 
 .section__text {
     margin: 0;
-    font-size: 15px;
+    font-size: 12px;
 
     @media (min-width: $tablet-width) {
         font-size: 10px;
@@ -103,7 +103,7 @@
     }
 }
 
-.map__wrapper {
+.user__map-wrapper {
     height: 150px;
     border-radius: 5px;
 }
@@ -135,7 +135,7 @@
 
 .user-info__title,
 .beer-info__title {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
 }
 

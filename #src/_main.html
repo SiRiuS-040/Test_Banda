@@ -15,7 +15,7 @@
                         <p class="section__text user-info__text">
                             <span class=" user-email">parker.cartwright@email.com</span>
                         </p>
-                        <p class="section__text user-info__ user-birth-date">1980-08-18</p>
+                        <p class="section__text user-birth-date">1980-08-18</p>
                     </div>
                 </div>
                 <button class="basic-button user__button user__button--show-hide">Показать/скрыть все сведения</button>
@@ -112,7 +112,7 @@
                         </li>
                         <li class="user__item">
                             <p class="section__text user-info__text">State:
-                                <span class="adress__text address-state">Iowa</span>
+                                <span class="address-state">Iowa</span>
                             </p>
                         </li>
                         <li class="user__item">
@@ -163,21 +163,19 @@
                         </li>
                     </ul>
                 </div>
-                <div class="map__wrapper">
+                <div class="user__map-wrapper map">
                     <div class="map__canvas" id="map-canvas">
                     </div>
                 </div>
             </div>
-            <div class="control">
+            <div class="control user-control">
                 <h3 class="section__subtitle visually-hidden">Опции пользователя</h3>
-                <!-- <button class="basic-button user__button user__button--open-settings">Настройки</button>
-                <button class="basic-button user__button user__button--open-favorites">Избранное</button> -->
-                <button class="basic-button user__button user__button--change-user">Выйти и Сменить
+                <button class="basic-button user-control__button user-control__button--change-user">Выйти и Сменить
                     пользователя</button>
             </div>
         </section>
         <section class="section beer-section ">
-            <h2 class="section__title">Нет времени думать!</h2>
+            <h2 class="section__title your-beer-title">Пивогенератор v 1.0:</h2>
             <div class="section__beer-info beer-info">
                 <ul class="section__list beer-info__list">
                     <li class="section__item beer-info__item">
@@ -238,17 +236,14 @@
                 </ul>
                 <div class="section__control beer-options">
                     <button class="basic-button beer-options__button beer-options__button--next">Следующее!</button>
-                    <!-- <button class="basic-button beer-options__button beer-options__button--in-favirite">В
-                        избранное!</button>
-                    <button class="basic-button beer-options__button beer-options__button--close">На сегодня
-                        хватит!</button> -->
                 </div>
             </div>
         </section>
     </div>
-    <section class="section control">
+    <section class="section control change-beer">
         <h3 class="section__subtitle">Как будем выбирать?</h3>
-        <button class="basic-button change-beer change-beer__button--fast">Просто заткнись, возьми деньги и дай мне
+        <button class="basic-button change-beer__button change-beer__button--fast">Просто заткнись, возьми деньги и дай
+            мне
             пиво!</button>
         <button class="basic-button change-beer__button change-beer__button--best">Пиво дня</button>
         <button class="basic-button change-beer__button change-beer__button--surprise">Удиви меня!</button>

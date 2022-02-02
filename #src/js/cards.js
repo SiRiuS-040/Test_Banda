@@ -1,72 +1,26 @@
 import { getUserData, getBeerData } from '../js/api.min.js';
 import { getUserMapData } from '../js/map.min.js';
 
-// const BEER = {
-//     "id": 933,
-//     "uid": "610def3c-3a4d-46d5-a2e5-9ed7456c091e +",
-//     "brand": "Coors lite +",
-//     "name": "Trappistes Rochefort 8 +",
-//     "style": "Scottish And Irish Ale +",
-//     "hop": "Newport +",
-//     "yeast": "2112 - California Lager +",
-//     "malts": "Carapils +",
-//     "ibu": "63 IBU +",
-//     "alcohol": "2.4% +",
-//     "blg": "5.3°Blg +"
-// };
-
-// const USER = {
-//     "id": "76 +",
-//     "uid": "fb9451a4-95aa-40b5-8278-12b119cc8f6b +",
-//     "password": "Yc6FCpPTE2 +",
-//     "first_name": "Parker +",
-//     "last_name": "Cartwright +",
-//     "username": "parker.cartwright +",
-//     "email": "parker.cartwright@email.com +",
-//     "avatar": "https://robohash.org/easitsuscipit.png?size=300x300\u0026set=set1 +",
-//     "gender": "Non-binary +",
-//     "phone_number": "+232 354-665-4013 +",
-//     "social_insurance_number": "449471903 +",
-//     "date_of_birth": "1980-08-18 +",
-//     "employment": {
-//         "title": "Internal Liaison +",
-//         "key_skill": "Leadership +"
-//     },
-//     "address": {
-//         "city": "Lake Cedrickville +",
-//         "street_name": "Wilfredo Square +",
-//         "street_address": "96840 Erdman Brook +",
-//         "zip_code": "39851-1610 +",
-//         "state": "Iowa +",
-//         "country": "United States +",
-//         "coordinates": {
-//             "lat": 51.15356230667055,
-//             "lng": -53.79519763212616
-//         }
-//     },
-//     "credit_card": {
-//         "cc_number": "4337-7750-0381-9086 +"
-//     },
-//     "subscription": {
-//         "plan": "Premium +",
-//         "status": "Active +",
-//         "payment_method": "WeChat Pay +",
-//         "term": "Full subscription +"
-//     }
-// };
-
 const userCard = document.querySelector('.user');
 const beerCard = document.querySelector('.beer-info');
+const beerCardImahe = document.querySelector('.beer-section');
+const beerCardTitle = document.querySelector('.your-beer-title');
+
+const beerCardImgPath = {
+    img1: '/img/beer-4.png',
+    img2: '/img/beer-card.jpg',
+    img3: '/img/bender.png',
+    img4: '/img/beer-3.png',
+    img5: '/img/beer-card-4.jpg',
+};
 
 const userInfo = document.querySelector('.user-info');
 const userInfoButton = document.querySelector('.user__button--show-hide');
-
-const changeUser = document.querySelector('.user__button--change-user');
+const changeUser = document.querySelector('.user-control__button--change-user');
 const changeBeerFast = document.querySelector('.change-beer__button--fast');
 const changeBeerBest = document.querySelector('.change-beer__button--best');
 const changeBeerSurprise = document.querySelector('.change-beer__button--surprise');
 const changeBeerNext = document.querySelector('.beer-options__button--next');
-
 
 const getUserInfoData = (dataArray) => {
 
@@ -102,7 +56,6 @@ const getUserInfoData = (dataArray) => {
     userCard.querySelector('.subscription-term').textContent = dataArray.subscription.term;
 };
 
-
 const getUserCardData = (dataArray) => {
     getUserInfoData(dataArray);
     getUserMapData(dataArray);
@@ -129,41 +82,41 @@ let loadUserData = getUserData(getUserCardData, console.error);
 let loadBeerData = getBeerData(getBeerCardData, console.error);
 
 const operAndHideUserInfo = () => {
-
     userInfo.classList.toggle('user-info--open');
+
 };
-
-
-
 
 userInfoButton.addEventListener('click', () => {
     operAndHideUserInfo();
 });
 
-
 changeUser.addEventListener('click', () => {
     loadUserData();
 });
 
-
+changeBeerNext.addEventListener('click', () => {
+    beerCardTitle.textContent = 'Пивогенератор v 1.0:';
+    beerCardImahe.style.backgroundImage = (" url('" + beerCardImgPath.img1 + "'");
+    loadBeerData();
+});
 
 changeBeerFast.addEventListener('click', () => {
+    beerCardTitle.textContent = 'Нет времени думать? - Быстро пей!';
+    beerCardImahe.style.backgroundImage = (" url('" + beerCardImgPath.img4 + "'");
     loadBeerData();
 });
 
 changeBeerBest.addEventListener('click', () => {
-    alert("придется подождать пару секунд");
-    setTimeout(loadBeerData, 1000);
+    beerCardTitle.textContent = 'Лучшее на сегодня!';
+    beerCardImahe.style.backgroundImage = (" url('" + beerCardImgPath.img2 + "'");
+    setTimeout(loadBeerData, 0);
 
 });
-
-changeBeerNext.addEventListener('click', () => {
-    loadBeerData();
-});
-
 
 changeBeerSurprise.addEventListener('click', () => {
-    alert("Мы делаем все возможное - ждите!");
-    setTimeout(loadBeerData, 5000);
+    beerCardTitle.textContent = 'Из самых дальних уголков вселенной!';
+    beerCardImahe.style.backgroundImage = (" url('" + beerCardImgPath.img3 + "'");
+    setTimeout(loadBeerData, 0);
+
 });
 
